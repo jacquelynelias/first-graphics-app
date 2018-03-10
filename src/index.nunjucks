@@ -3,10 +3,15 @@
 {% import "_modules/link/link.nunjucks" as link %}
 
 {% block headline %}My headline will go here{% endblock %}
+
 {% block byline %}By Jacquieeeeeee{% endblock %}
+
 {% block pubdate %}
 <time datetime="2018-03-10" pubdate>March 10, 2018</time>
 {% endblock %}
+
 {% block content %}
-<p> Hello everybody! ;) how are we doing</p>
+{% for obj in site.data.harvard_park_homicides %}
+  {{ obj.first_name }} {{ obj.last_name }}<br />
+{% endfor %}
 {% endblock %}
